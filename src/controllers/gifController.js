@@ -3,7 +3,6 @@ const Gif = require('../models/gifModel')
 async function postGif(req, res) {
 	const { name, imageUrl, genre } = req.body
 	const newGif = new Gif({ name, imageUrl, genre })
-  console.log(req.body)
 	try {
 		const gifSaved = await newGif.save()
 		if (!gifSaved) {
